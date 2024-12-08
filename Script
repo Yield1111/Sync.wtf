@@ -61,7 +61,7 @@ local _0xE = function(_0xF, _0x10)
     _0x11.Size = UDim2.new(0, 150, 0, 30) -- Smaller notification size
     _0x11.Position = UDim2.new(0.5, -75, 0, -50)
     _0x11.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    _0x11.ZIndex = 20 -- Ensure it is on top
+    _0x11.ZIndex = math.huge -- Ensure it is on top
     _0x11.Parent = _0x5
     _0x6(_0x11)
 
