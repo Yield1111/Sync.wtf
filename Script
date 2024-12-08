@@ -8,6 +8,7 @@ local _0x4 = _0x3:WaitForChild("PlayerGui")
 
 -- Create a ScreenGui
 local _0x5 = Instance.new("ScreenGui")
+_0x5.ResetOnSpawn = false -- Ensure it persists after character respawn
 _0x5.Parent = _0x4
 
 -- Function to create UI with rounded corners and outline
@@ -17,7 +18,7 @@ local _0x6 = function(_0x7)
     _0x8.Parent = _0x7
 
     local _0x9 = Instance.new("UIStroke")
-    _0x9.Color = Color3.fromRGB(60, 0, 255)  -- Changed to purple
+    _0x9.Color = Color3.fromRGB(60, 0, 255) -- Changed to purple
     _0x9.Thickness = 2
     _0x9.Parent = _0x7
 end
@@ -27,6 +28,7 @@ local _0xA = Instance.new("Frame")
 _0xA.Size = UDim2.new(0, 200, 0, 50)
 _0xA.Position = UDim2.new(0.5, -100, 0.5, -25)
 _0xA.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_0xA.ZIndex = 10 -- Ensure it is on top
 _0xA.Parent = _0x5
 _0x6(_0xA)
 
@@ -35,9 +37,10 @@ local _0xB = Instance.new("TextButton")
 _0xB.Size = UDim2.new(1, 0, 1, 0)
 _0xB.BackgroundTransparency = 1
 _0xB.Text = "Load Sync.wtf"
-_0xB.TextColor3 = Color3.fromRGB(60, 0, 255)  -- Changed to purple
+_0xB.TextColor3 = Color3.fromRGB(60, 0, 255) -- Changed to purple
 _0xB.Font = Enum.Font.SourceSans
 _0xB.TextSize = 14
+_0xB.ZIndex = 11 -- Ensure text is above the frame
 _0xB.Parent = _0xA
 
 -- Add hover effect to the button box
@@ -55,26 +58,28 @@ _0xB.MouseLeave:Connect(_0xD)
 -- Custom notification function
 local _0xE = function(_0xF, _0x10)
     local _0x11 = Instance.new("Frame")
-    _0x11.Size = UDim2.new(0, 150, 0, 30)  -- Smaller notification size
+    _0x11.Size = UDim2.new(0, 150, 0, 30) -- Smaller notification size
     _0x11.Position = UDim2.new(0.5, -75, 0, -50)
     _0x11.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    _0x11.ZIndex = 20 -- Ensure it is on top
     _0x11.Parent = _0x5
     _0x6(_0x11)
 
     local _0x12 = Instance.new("TextLabel")
     _0x12.Size = UDim2.new(1, 0, 1, 0)
     _0x12.Text = _0xF
-    _0x12.TextColor3 = Color3.fromRGB(60, 0, 255)  -- Changed to purple
+    _0x12.TextColor3 = Color3.fromRGB(60, 0, 255) -- Changed to purple
     _0x12.Font = Enum.Font.SourceSans
-    _0x12.TextSize = 12  -- Smaller text size
+    _0x12.TextSize = 12 -- Smaller text size
     _0x12.TextWrapped = true
     _0x12.BackgroundTransparency = 1
+    _0x12.ZIndex = 21 -- Ensure text is above the frame
     _0x12.Parent = _0x11
 
     local _0x13 = _0x2:Create(
         _0x11,
         TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-        {Position = UDim2.new(0.5, -75, 0, 20)}  -- Adjust position for smaller notification
+        {Position = UDim2.new(0.5, -75, 0, 20)} -- Adjust position for smaller notification
     )
     _0x13:Play()
 
