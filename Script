@@ -17,7 +17,7 @@ local _0x6 = function(_0x7)
     _0x8.Parent = _0x7
 
     local _0x9 = Instance.new("UIStroke")
-    _0x9.Color = Color3.fromRGB(255, 85, 85)
+    _0x9.Color = Color3.fromRGB(60, 0, 255)  -- Changed to purple
     _0x9.Thickness = 2
     _0x9.Parent = _0x7
 end
@@ -35,7 +35,7 @@ local _0xB = Instance.new("TextButton")
 _0xB.Size = UDim2.new(1, 0, 1, 0)
 _0xB.BackgroundTransparency = 1
 _0xB.Text = "Load Sync.wtf"
-_0xB.TextColor3 = Color3.fromRGB(255, 85, 85)
+_0xB.TextColor3 = Color3.fromRGB(60, 0, 255)  -- Changed to purple
 _0xB.Font = Enum.Font.SourceSans
 _0xB.TextSize = 14
 _0xB.Parent = _0xA
@@ -64,7 +64,7 @@ local _0xE = function(_0xF, _0x10)
     local _0x12 = Instance.new("TextLabel")
     _0x12.Size = UDim2.new(1, 0, 1, 0)
     _0x12.Text = _0xF
-    _0x12.TextColor3 = Color3.fromRGB(255, 85, 85)
+    _0x12.TextColor3 = Color3.fromRGB(60, 0, 255)  -- Changed to purple
     _0x12.Font = Enum.Font.SourceSans
     _0x12.TextSize = 12  -- Smaller text size
     _0x12.TextWrapped = true
