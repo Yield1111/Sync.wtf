@@ -94,7 +94,7 @@ end
 
 -- Button click event
 _0xB.MouseButton1Click:Connect(function()
-    _0xE("Sync.wtf loading", 3)
+    _0xE("Loading Sync.wtf..", 3)
 
     local _0x15 = _0x2:Create(
         _0xA,
