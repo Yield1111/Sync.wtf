@@ -1,4 +1,4 @@
--- Define the target position
+while wait(0.05) do
 local targetPosition = Vector3.new(-19.1936417, 5.40206289, -198.450699)
 
 -- Loop through all children under workspace.Bags
@@ -11,4 +11,5 @@ for _, child in ipairs(workspace.Bags:GetChildren()) do
     else
         warn(child.Name .. " is not a BasePart and was skipped.")
     end
+end
 end
