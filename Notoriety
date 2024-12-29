@@ -1,4 +1,4 @@
-while wait(0.01) do
+while wait(0.1) do
 
 
 game:GetService("ReplicatedStorage").RS_Package.Remotes.StartInteraction:FireServer(workspace.PhoneFiles2:GetChildren()[11]:GetChildren()[2].ProximityPrompt)
