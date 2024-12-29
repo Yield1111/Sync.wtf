@@ -1,3 +1,6 @@
+while wait(0.01) do
+
+
 game:GetService("ReplicatedStorage").RS_Package.Remotes.StartInteraction:FireServer(workspace.PhoneFiles2:GetChildren()[11]:GetChildren()[2].ProximityPrompt)
 game:GetService("ReplicatedStorage").RS_Package.Remotes.CompleteInteraction:FireServer(workspace.PhoneFiles2:GetChildren()[11]:GetChildren()[2].ProximityPrompt)
 
@@ -75,4 +78,5 @@ game:GetService("ReplicatedStorage").RS_Package.Remotes.CompleteInteraction:Fire
 
 game:GetService("ReplicatedStorage").RS_Package.Remotes.StartInteraction:FireServer(workspace.PhoneFiles1:GetChildren()[1]:GetChildren()[2].ProximityPrompt)
 game:GetService("ReplicatedStorage").RS_Package.Remotes.CompleteInteraction:FireServer(workspace.PhoneFiles1:GetChildren()[1]:GetChildren()[2].ProximityPrompt)
+end
 
