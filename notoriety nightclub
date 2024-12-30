@@ -18,13 +18,6 @@ local function checkCriminalPresence()
     return workspace.Criminals:FindFirstChild(player.Name) ~= nil
 end
 -- Loop to check for the player in workspace.Criminals
-while true do
-    -- If the player is found in workspace.Criminals
-    if checkCriminalPresence() then
-        -- Execute the rest of the script here (only once)
-        print(player.Name .. " is in the Criminals workspace! Executing the rest of the script.")
-        local Players = game:GetService("Players")
-local player = Players.LocalPlayer
 
 -- Function to check if the player is in the workspace.Criminals
 
@@ -400,54 +393,5 @@ end
 while true do
     checkGameStatus()
     wait(3.4)  -- Wait for 1 second before checking again
-end
-
-
-
-
-
-
-
-
--- Fire MaskOn Remote
-
-
---
--- First tween (instant)
-
-
--- Notification after first tween
-
-
-
-
-
-
--- Repeat similar actions with loading bars for other interactions
--- Add further bags and interactions here...
-
-
-
-
--- Third tween (slow)
-
-
-
-
-
-
-
-
-
-
-
-
-        break
-    else
-    showNotification("", "Waiting for game to start..", 5)
-    end
-
-    -- Wait before checking again (prevents too fast checks, e.g., 0.5 seconds)
-    wait(0.5)
 end
 
