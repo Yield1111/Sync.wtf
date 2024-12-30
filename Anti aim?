@@ -1,29 +1,36 @@
-while wait(0.01) do
+-- Create a coroutine to run the loop in the background without blocking other scripts
+coroutine.wrap(function()
+    while true do
+        -- First vector and number to fire to the server
+        local ohVector31 = Vector3.new(-51.946990966796875, 199.68016052246094, 24.217138290405273)
+        local ohNumber2 = -3123112
+        game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
+        
+        -- Wait before the next iteration to avoid blocking the main thread
+        wait(0.01)
 
-local ohVector31 = Vector3.new(-51.946990966796875, 199.68016052246094, 24.217138290405273)
-local ohNumber2 = -3123112
+        -- Second vector and number to fire to the server
+        local ohVector31 = Vector3.new(-51.946990966796875, 199.68016052246094, -22222.217138290405273)
+        local ohNumber2 = -123131231
+        game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
 
-game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
+        -- Wait before the next iteration to avoid blocking the main thread
+        wait(0.01)
 
-wait(0.01)
+        -- Third vector and number to fire to the server
+        local ohVector31 = Vector3.new(-52.15070724487305, -186.69017028808594, 28.50386619567871)
+        local ohNumber2 = 1231231
+        game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
 
-local ohVector31 = Vector3.new(-51.946990966796875, 199.68016052246094, -22222.217138290405273)
-local ohNumber2 = -123131231
+        -- Wait before the next iteration to avoid blocking the main thread
+        wait(0.01)
 
-game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
+        -- Fourth vector and number to fire to the server
+        local ohVector31 = Vector3.new(-51.946990966796875, -199.68016052246094, -22222.217138290405273)
+        local ohNumber2 = 223131
+        game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
 
-
-wait(0.01)
-
-local ohVector31 = Vector3.new(-52.15070724487305, -186.69017028808594, 28.50386619567871)
-local ohNumber2 = 1231231
-
-game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
-
-wait(0.01)
-
-local ohVector31 = Vector3.new(-51.946990966796875, -199.68016052246094, -22222.217138290405273)
-local ohNumber2 = 223131
-
-game:GetService("ReplicatedStorage").RS_Package.Remotes.LookVector:FireServer(ohVector31, ohNumber2)
-end
+        -- Wait before the next iteration to avoid blocking the main thread
+        wait(0.01)
+    end
+end)()
