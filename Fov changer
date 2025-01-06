@@ -1,23 +1,19 @@
 local TweenService2 = game:GetService("TweenService")
 local camera = game.Workspace.CurrentCamera
 
--- Tween the Field of View to 120 (smooth transition)
 local tweenInfo = TweenInfo.new(
     9999999999999999, -- Duration in seconds for smooth transition
     Enum.EasingStyle.Linear, -- Easing style
     Enum.EasingDirection.Out -- Easing direction
 )
 
--- Tween goal to set the Field of View to 120
 local tweenGoal = { FieldOfView = 1000 }
 
 -- Create and play the initial tween (from current FOV to 120)
 local tween = TweenService2:Create(camera, tweenInfo, tweenGoal)
 tween:Play()
 
--- Once the tween is complete, set FOV permanently to 120
 tween.Completed:Connect(function()
-    -- This ensures that the FOV is set to 120 after the tween ends
     camera.FieldOfView = 120
 
 end)
